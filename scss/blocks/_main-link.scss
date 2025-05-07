@@ -1,0 +1,21 @@
+.main-link {
+	@include flexCenter(row, flex-end);
+	gap: 0.73rem;
+	$root: &;
+
+	@media (max-width: 75rem) {
+		gap: 0.31rem;
+	}
+
+	&:hover,
+	&:focus-visible,
+	&:focus-within {
+		#{$root}__name {
+			transform: translateY(-40%);
+		}
+	}
+
+	&__name {
+		transition: transform $transition-300;
+	}
+}

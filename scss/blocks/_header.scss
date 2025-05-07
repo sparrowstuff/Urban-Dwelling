@@ -1,0 +1,179 @@
+.header {
+	position: relative;
+	z-index: 9999;
+	$root: &;
+
+	&__main {
+		@include flexCenter;
+	}
+
+	&__inner-top-wrapper {
+		width: 100vw;
+		background-color: $main;
+	}
+
+	&__top-menu {
+		@include flexCenter(row, center, flex-end);
+		background-color: transparent;
+		width: 100%;
+		padding: 0.75rem 0 0.76rem 0;
+		gap: 3vw;
+
+		@media (max-width: 48rem) {
+			display: none;
+		}
+	}
+
+	&__delivery-link,
+	&__varanty-link {
+		font-size: $rem-1;
+		line-height: 100%;
+		color: $white;
+		position: relative;
+		z-index: 5;
+
+		transition: color;
+
+		&::after {
+			content: '';
+			width: 100%;
+			height: 1px;
+			background-color: $white;
+			clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
+			border-radius: 0.31rem 0 0.31rem 0;
+			position: absolute;
+			bottom: -15%;
+			left: 0;
+			z-index: 0;
+
+			transition: clip-path $transition-300, background-color $transition-300;
+		}
+
+		&:hover,
+		&:focus-visible {
+			&::after {
+				clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+			}
+		}
+	}
+
+	&__lang-btn {
+		position: relative;
+
+		&::after {
+			content: '';
+			width: 100%;
+			height: 1px;
+			background-color: $white;
+			clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
+			border-radius: 0.31rem 0 0.31rem 0;
+			position: absolute;
+			bottom: -15%;
+			left: 0;
+			z-index: 0;
+
+			transition: clip-path $transition-300, background-color $transition-300;
+		}
+
+		&:hover,
+		&:focus-visible {
+			&::after {
+				clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+			}
+		}
+	}
+
+	&__bottom-menu {
+		background-color: $white;
+		@include flexCenter(row, center, space-between);
+		gap: max(15.12rem, 11vw);
+		padding: 0.68rem 0 0.68rem 0;
+		width: 100%;
+		position: relative;
+
+		@media (max-width: 87.5rem) {
+			gap: clamp(7.5rem, 7vw, 15.12rem);
+		}
+
+		@media (max-width: 75rem) {
+			gap: 4rem;
+		}
+
+		@media (max-width: 68.75rem) {
+			gap: 2vw;
+		}
+	}
+
+	&__inner-bottom-wrapper {
+		width: 100vw;
+		@include flexCenter(row, center, flex-end);
+		gap: clamp(2rem, 5vw, 8.25rem);
+
+		@media (max-width: 90rem) {
+			gap: 3vw;
+		}
+
+		@media (max-width: 62.5rem) {
+			gap: 1vw;
+		}
+
+		@media (max-width: 48rem) {
+			justify-content: flex-end;
+		}
+	}
+
+	&__button-block {
+		@include flexCenter(row);
+		gap: 1vw;
+
+		@media (max-width: 48rem) {
+			display: none;
+		}
+	}
+
+	&__burger-menu {
+		@media (min-width: 48.06rem) {
+			display: none;
+		}
+
+		opacity: 0;
+		pointer-events: none;
+		clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+		transition: opacity $transition-300, clip-path $transition-300;
+
+		@include flexCenter;
+		gap: 1rem;
+
+		position: absolute;
+		top: 94%;
+		right: 1%;
+
+		border-radius: 0.62rem;
+		padding: 0.62rem;
+		background-color: $grey-light;
+
+		#{$root}__top-menu {
+			@include flexCenter;
+			gap: 0.62rem;
+
+			#{$root}__delivery-link,
+			#{$root}__varanty-link,
+			#{$root}__lang-btn {
+				display: block;
+				color: $main;
+
+				&:hover,
+				&:focus-visible {
+					&::after {
+						background-color: $main;
+					}
+				}
+			}
+		}
+	}
+
+	&__main-menu {
+		@include flexCenter;
+		gap: 1rem;
+	}
+}

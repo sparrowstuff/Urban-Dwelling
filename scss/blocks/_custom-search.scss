@@ -1,0 +1,39 @@
+.custom-search {
+	$root: &;
+
+	&:hover,
+	&:focus-visible {
+		#{$root}__field {
+			outline: 1px solid $main;
+		}
+	}
+
+	&__label {
+		position: relative;
+	}
+
+	&__field {
+		border-radius: 5.54rem;
+		border: unset;
+		outline: 1px solid $grey-light;
+		padding: 0.75rem 2.18rem 0.68rem 1.31rem;
+		max-width: 10.62rem;
+		transition: outline $transition-300;
+
+		&::placeholder {
+			line-height: 100%;
+			color: $main;
+		}
+
+		@media (max-width: 62.5rem) {
+			max-width: 9rem;
+		}
+	}
+
+	&__icon {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		right: 8%;
+	}
+}

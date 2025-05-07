@@ -1,0 +1,77 @@
+.nav-menu {
+	$root: &;
+
+	@media (max-width: 48rem) {
+		display: none;
+	}
+
+	&__list {
+		@include flexCenter(row);
+		gap: 5vw;
+
+		@media (max-width: 87.5rem) {
+			gap: clamp(1rem, 5vw, 3.18rem);
+		}
+
+		@media (max-width: 75rem) {
+			gap: min(4vw, 2rem);
+		}
+
+		@media (max-width: 62.5rem) {
+			gap: 2vw;
+		}
+
+		@media (max-width: 53.12rem) {
+			gap: 0.31rem;
+		}
+	}
+
+	&__link {
+		font-weight: 600;
+		line-height: 100%;
+		text-transform: uppercase;
+		position: relative;
+		z-index: 5;
+		transition: color $transition-300;
+
+		&::after {
+			content: '';
+			width: 110%;
+			height: 120%;
+			position: absolute;
+			top: -3%;
+			left: -5%;
+			background-color: $grey;
+			clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
+			transition: clip-path $transition-300, background-color $transition-300;
+			border-radius: 0.31rem 0 0.31rem 0;
+			z-index: -1;
+		}
+
+		&:hover,
+		&:focus-visible {
+			color: $white;
+
+			&::after {
+				clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+			}
+		}
+
+		@media (max-width: 62.5rem) {
+			font-size: $rem-087;
+		}
+
+		@media (max-width: 53.12rem) {
+			font-size: $rem-075;
+		}
+	}
+
+	&--burger {
+		display: block;
+
+		#{$root}__list {
+			@include flexCenter(column);
+			gap: 0.62rem;
+		}
+	}
+}

@@ -1,0 +1,24 @@
+.burger-menu {
+	@include flexCenter;
+	gap: 0.21rem;
+	padding: 0.38rem 0.52rem 0.38rem 0.52rem;
+	width: 2.5rem;
+	height: 1.5rem;
+	border: unset;
+	background-color: transparent;
+	$root: &;
+
+	&__top-line,
+	&__main-line,
+	&__bottom-line {
+		width: 1.45rem;
+		height: 0.1rem;
+		background-color: $dark-blue;
+
+		transition: opacity $transition-300, transform $transition-300;
+	}
+
+	@media (min-width: 48.06rem) {
+		display: none;
+	}
+}

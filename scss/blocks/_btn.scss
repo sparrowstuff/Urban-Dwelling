@@ -1,0 +1,67 @@
+.btn {
+	border-radius: 6.25rem;
+	padding: 0.81rem 5.37rem 0.81rem 5.37rem;
+	background-color: $orange;
+	border: unset;
+	@include flexCenter;
+
+	font-weight: 600;
+	font-size: $rem-1;
+	line-height: 140%;
+	color: $white;
+	transition: color $transition-300;
+
+	$root: &;
+
+	&--transparent {
+		border-radius: unset;
+		background-color: unset;
+		padding: unset;
+
+		font-weight: 400;
+		line-height: 100%;
+	}
+
+	&--bucket {
+		@include flexCenter(row);
+		gap: 0.31rem;
+		background-color: $black;
+		padding: 0.21rem 1.18rem 0.21rem 1.18rem;
+		max-height: 2.43rem;
+
+		#{$root}__icon-wrapper {
+			position: relative;
+		}
+
+		#{$root}__bucket-icon {
+			color: $white;
+			transition: color $transition-300;
+		}
+
+		#{$root}__counter {
+			background: $white;
+			border-radius: 50%;
+			@include flexCenter;
+			color: $black;
+			width: 1.12rem;
+			height: 1.12rem;
+
+			position: absolute;
+			top: 5%;
+			right: -2%;
+		}
+
+		@media (max-width: 62.5rem) {
+			padding: 0.21rem 0.5rem 0.21rem 0.5rem;
+		}
+
+		&:hover,
+		&:focus-visible {
+			color: $orange;
+
+			#{$root}__bucket-icon {
+				color: $orange;
+			}
+		}
+	}
+}
