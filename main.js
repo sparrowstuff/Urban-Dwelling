@@ -8,3 +8,10 @@ burgerBtn.addEventListener('click', function () {
 	const burgerMenu = document.querySelector('.header__burger-menu')
 	burgerMenu.classList.toggle('show')
 })
+
+const searchBtn = document.querySelector('.custom-search__open-search-menu')
+
+searchBtn.addEventListener('click', function () {
+	const searchField = document.querySelector('.custom-search__field')
+	searchField.classList.toggle('show')
+})

@@ -1,0 +1,20 @@
+.search-result {
+	padding: 3.75rem 0 4.12rem;
+
+	&__main {
+		@include flexCenter(column, flex-start, unset);
+		gap: 2.5rem;
+	}
+
+	&__title {
+		font-family: $korataki;
+		font-size: clamp($rem-2, 7vw, $rem-25);
+		line-height: 140%;
+	}
+
+	&__wrapper {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 1.87rem;
+	}
+}

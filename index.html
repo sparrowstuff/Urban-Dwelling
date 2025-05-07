@@ -91,6 +91,22 @@
 											<use xlink:href="images/sprite.svg#search-icon"></use>
 										</svg>
 									</label>
+									<div class="custom-search__additional-search">
+										<button
+											class="custom-search__open-search-menu"
+											type="button"
+											aria-label="Открыть меню поиска"
+										>
+											<svg
+												class="custom-search__additional-icon"
+												width="22"
+												height="22"
+												aria-hidden="true"
+											>
+												<use xlink:href="images/sprite.svg#search-icon"></use>
+											</svg>
+										</button>
+									</div>
 								</div>
 								<button class="header__bucket-btn btn btn--bucket" type="btn">
 									<div class="btn__icon-wrapper">
@@ -195,14 +211,165 @@
 			<h1 class="visually-hidden">Результат поиска</h1>
 			<div class="container">
 				<div class="search-result__main">
-					<h2 class="search-result__title section-title"></h2>
-					<article class="search-result__wrapper">
-						<article class="search-card">
-							<picture class="search-card__picture"
-								><source type="images/webp" srcset=""
-							/></picture>
+					<h2 class="search-result__title section-title">Результаты поиска</h2>
+					<div class="search-result__wrapper">
+						<article class="product-card">
+							<div class="product-card__main">
+								<div class="product-card__picture-wrapper">
+									<picture class="product-card__product-picture"
+										><source
+											type="images/webp"
+											srcset="images/search-result/main-card-1.webp"
+										/>
+										<img
+											class="product-card__product-image"
+											width="320"
+											height="428"
+											alt="Встраиваемый светильник Markt"
+											src="images/search-result/main-card-1.png"
+											srcset="images/search-result/main-card-1@2x.png 2x"
+										/>
+									</picture>
+									<span class="product-card__sale">Акция</span>
+									<a
+										class="product-card__product-link"
+										href="#"
+										aria-label="Подробнее о товаре"
+									>
+										Подробнее
+									</a>
+								</div>
+								<div class="product-card__heading">
+									<h3 class="product-card__product-name">
+										Встраиваемый светильник Markt
+									</h3>
+									<div class="product-card__price-block">
+										<span class="product-card__sale-price">3&nbsp;490 ₽</span>
+										<span class="product-card__regular-price"
+											>5&nbsp;060 ₽</span
+										>
+									</div>
+								</div>
+							</div>
 						</article>
-					</article>
+						<article class="product-card product-card--without-sale">
+							<div class="product-card__main">
+								<div class="product-card__picture-wrapper">
+									<picture class="product-card__product-picture"
+										><source
+											type="images/webp"
+											srcset="images/search-result/main-card-2.webp"
+										/>
+										<img
+											class="product-card__product-image"
+											width="320"
+											height="428"
+											alt="Встраиваемый светильник Markt"
+											src="images/search-result/main-card-2.png"
+											srcset="images/search-result/main-card-2@2x.png 2x"
+										/>
+									</picture>
+									<span class="product-card__sale">Акция</span>
+									<a
+										class="product-card__product-link"
+										href="#"
+										aria-label="Подробнее о товаре"
+									>
+										Подробнее
+									</a>
+								</div>
+								<div class="product-card__heading">
+									<h3 class="product-card__product-name">
+										Линейный светильник ARG
+									</h3>
+									<div class="product-card__price-block">
+										<span class="product-card__sale-price">3&nbsp;490 ₽</span>
+										<span class="product-card__regular-price"
+											>6&nbsp;700 ₽</span
+										>
+									</div>
+								</div>
+							</div>
+						</article>
+						<article class="product-card">
+							<div class="product-card__main">
+								<div class="product-card__picture-wrapper">
+									<picture class="product-card__product-picture"
+										><source
+											type="images/webp"
+											srcset="images/search-result/main-card-3.webp"
+										/>
+										<img
+											class="product-card__product-image"
+											width="320"
+											height="428"
+											alt="Встраиваемый светильник Markt"
+											src="images/search-result/main-card-3.png"
+											srcset="images/search-result/main-card-3@2x.png 2x"
+										/>
+									</picture>
+									<span class="product-card__sale">Акция</span>
+									<a
+										class="product-card__product-link"
+										href="#"
+										aria-label="Подробнее о товаре"
+									>
+										Подробнее
+									</a>
+								</div>
+								<div class="product-card__heading">
+									<h3 class="product-card__product-name">
+										Сведодиодный светильник
+									</h3>
+									<div class="product-card__price-block">
+										<span class="product-card__sale-price">5&nbsp;060 ₽</span>
+										<span class="product-card__regular-price"
+											>22&nbsp;060 ₽</span
+										>
+									</div>
+								</div>
+							</div>
+						</article>
+						<article class="product-card product-card--without-sale">
+							<div class="product-card__main">
+								<div class="product-card__picture-wrapper">
+									<picture class="product-card__product-picture"
+										><source
+											type="images/webp"
+											srcset="images/search-result/main-card-2.webp"
+										/>
+										<img
+											class="product-card__product-image"
+											width="320"
+											height="428"
+											alt="Встраиваемый светильник Markt"
+											src="images/search-result/main-card-2.png"
+											srcset="images/search-result/main-card-2@2x.png 2x"
+										/>
+									</picture>
+									<span class="product-card__sale">Акция</span>
+									<a
+										class="product-card__product-link"
+										href="#"
+										aria-label="Подробнее о товаре"
+									>
+										Подробнее
+									</a>
+								</div>
+								<div class="product-card__heading">
+									<h3 class="product-card__product-name">
+										Встраиваемый светильник Markt
+									</h3>
+									<div class="product-card__price-block">
+										<span class="product-card__sale-price">3&nbsp;490 ₽</span>
+										<span class="product-card__regular-price"
+											>3&nbsp;490 ₽</span
+										>
+									</div>
+								</div>
+							</div>
+						</article>
+					</div>
 				</div>
 			</div>
 		</section>

@@ -7,11 +7,11 @@
 
 	&__list {
 		@include flexCenter(row);
-		gap: 5vw;
+		gap: 4vw;
 
-		@media (max-width: 87.5rem) {
-			gap: clamp(1rem, 5vw, 3.18rem);
-		}
+		// @media (max-width: 87.5rem) {
+		// 	gap: clamp(1rem, 5vw, 3.18rem);
+		// }
 
 		@media (max-width: 75rem) {
 			gap: min(4vw, 2rem);

@@ -1,0 +1,145 @@
+.product-card {
+	min-height: 31.25rem;
+	$root: &;
+
+	&:hover,
+	&:focus-visible {
+		#{$root}__product-link {
+			opacity: 1;
+			transform: translateY(0);
+		}
+
+		#{$root}__picture-wrapper::before {
+			background-color: $grey-light-07;
+		}
+	}
+
+	&__main {
+		@include flexCenter(column, flex-start);
+		gap: 1.25rem;
+	}
+
+	&__picture-wrapper {
+		position: relative;
+		overflow: hidden;
+
+		&::before {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0.13rem;
+			width: 100%;
+			height: 20%;
+			background-color: transparent;
+			z-index: 0;
+			border-radius: 0 0 1.25rem 1.25rem;
+			transition: background-color $transition-300;
+		}
+	}
+
+	&__product-image {
+		border-radius: 1.25rem;
+		overflow: hidden;
+	}
+
+	&__sale {
+		max-width: 7.87rem;
+		max-height: 2.37rem;
+		border-radius: 6.25rem;
+		padding: 0.3rem 2.46rem 0.5rem 2.46rem;
+		background-color: $black;
+		display: block;
+
+		color: $white;
+		font-size: $rem-1;
+		font-weight: 600;
+		line-height: 140%;
+
+		position: absolute;
+		top: 0.62rem;
+		left: 0.62rem;
+	}
+
+	&__product-link {
+		border-radius: 6.25rem;
+		padding: 0.81rem 5.37rem 0.81rem 5.37rem;
+		background-color: $orange;
+		border: unset;
+		@include flexCenter(row);
+		max-width: 89%;
+
+		font-weight: 600;
+		font-size: $rem-1;
+		line-height: 140%;
+		color: $white;
+		transition: opacity $transition-300, transform $transition-300;
+
+		position: absolute;
+		left: 0.87rem;
+		bottom: 1.25rem;
+		transform: translateY(0.62rem);
+		z-index: 5;
+
+		opacity: 0;
+	}
+
+	&__heading {
+		@include flexCenter(column, flex-start);
+		gap: 0.75rem;
+	}
+
+	&__product-name {
+		font-weight: 700;
+		font-size: $rem-112;
+		line-height: 140%;
+	}
+
+	&__price-block {
+		@include flexCenter(row);
+		gap: 1rem;
+	}
+
+	&__sale-price {
+		font-weight: 700;
+		font-size: $rem-137;
+		line-height: 140%;
+		color: $orange;
+	}
+
+	&__regular-price {
+		position: relative;
+
+		font-weight: 600;
+		font-size: $rem-137;
+		line-height: 140%;
+		color: $grey;
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 54%;
+			left: 0;
+			transform: translateY(-50%);
+			width: 76%;
+			height: 2px;
+			background-color: $grey;
+		}
+	}
+
+	&--without-sale {
+		#{$root}__sale {
+			display: none;
+		}
+
+		#{$root}__sale-price {
+			display: none;
+		}
+
+		#{$root}__regular-price {
+			color: $black;
+			&::before {
+				position: static;
+			}
+		}
+	}
+}

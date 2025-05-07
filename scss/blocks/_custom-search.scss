@@ -1,5 +1,6 @@
 .custom-search {
 	$root: &;
+	@include flexCenter(row);
 
 	&:hover,
 	&:focus-visible {
@@ -18,11 +19,19 @@
 		outline: 1px solid $grey-light;
 		padding: 0.75rem 2.18rem 0.68rem 1.31rem;
 		max-width: 10.62rem;
-		transition: outline $transition-300;
+		transition: outline $transition-300, opacity $transition-300;
 
 		&::placeholder {
 			line-height: 100%;
 			color: $main;
+		}
+
+		@media (max-width: 100rem) {
+			position: absolute;
+			top: 1.56rem;
+			left: -4.68rem;
+			opacity: 0;
+			pointer-events: none;
 		}
 
 		@media (max-width: 62.5rem) {
@@ -35,5 +44,24 @@
 		top: 50%;
 		transform: translateY(-50%);
 		right: 8%;
+		color: $main;
+
+		@media (max-width: 100rem) {
+			display: none;
+		}
+	}
+
+	&__additional-search {
+		position: relative;
+	}
+
+	&__open-search-menu {
+		background-color: transparent;
+		border: unset;
+		display: none;
+
+		@media (max-width: 100rem) {
+			display: block;
+		}
 	}
 }
