@@ -1,5 +1,4 @@
 .product-card {
-	min-height: 31.25rem;
 	$root: &;
 
 	&:hover,
@@ -58,6 +57,14 @@
 		position: absolute;
 		top: 0.62rem;
 		left: 0.62rem;
+
+		@media (max-width: 31.25rem) {
+			max-width: 4.37rem;
+			max-height: 1.5rem;
+			padding: 0.12rem 0.9rem 0.12rem 0.9rem;
+
+			font-size: $rem-087;
+		}
 	}
 
 	&__product-link {
@@ -72,7 +79,8 @@
 		font-size: $rem-1;
 		line-height: 140%;
 		color: $white;
-		transition: opacity $transition-300, transform $transition-300;
+		transition: opacity $transition-300, transform $transition-300,
+			box-shadow $transition-300, color $transition-300;
 
 		position: absolute;
 		left: 0.87rem;
@@ -81,6 +89,21 @@
 		z-index: 5;
 
 		opacity: 0;
+
+		&:hover,
+		&:focus-visible {
+			box-shadow: inset 0 0 3px 3px $white;
+			color: $black;
+		}
+
+		@media (max-width: 48rem) {
+			left: 8%;
+		}
+
+		@media (max-width: 31.25rem) {
+			left: 5%;
+			padding: 0.6rem 3.37rem 0.6rem 3.37rem;
+		}
 	}
 
 	&__heading {
@@ -92,6 +115,11 @@
 		font-weight: 700;
 		font-size: $rem-112;
 		line-height: 140%;
+
+		@media (max-width: 31.25rem) {
+			font-weight: 500;
+			font-size: $rem-1;
+		}
 	}
 
 	&__price-block {
@@ -104,6 +132,10 @@
 		font-size: $rem-137;
 		line-height: 140%;
 		color: $orange;
+
+		@media (max-width: 31.25rem) {
+			font-size: $rem-1;
+		}
 	}
 
 	&__regular-price {
@@ -123,6 +155,10 @@
 			width: 76%;
 			height: 2px;
 			background-color: $grey;
+		}
+
+		@media (max-width: 31.25rem) {
+			font-size: $rem-075;
 		}
 	}
 
