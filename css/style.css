@@ -321,7 +321,6 @@ template {
   font-family: "Lato";
   src: url("../fonts/Lato-Regular.woff2") format("woff2"), url("../fonts/Lato-Regular.woff") format("woff");
   font-weight: 400;
-  src: format(woff);
   font-style: normal;
   font-display: swap;
 }
