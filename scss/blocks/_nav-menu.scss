@@ -9,10 +9,6 @@
 		@include flexCenter(row);
 		gap: 4vw;
 
-		// @media (max-width: 87.5rem) {
-		// 	gap: clamp(1rem, 5vw, 3.18rem);
-		// }
-
 		@media (max-width: 75rem) {
 			gap: min(4vw, 2rem);
 		}
@@ -64,6 +60,13 @@
 		@media (max-width: 53.12rem) {
 			font-size: $rem-075;
 		}
+
+		@media (max-width: 48rem) {
+			&::after {
+				width: 104%;
+				left: -2%;
+			}
+		}
 	}
 
 	&--burger {
@@ -72,6 +75,81 @@
 		#{$root}__list {
 			@include flexCenter(column);
 			gap: 0.62rem;
+		}
+	}
+
+	&--footer {
+		@include flexCenter(column, flex-start, unset);
+		gap: 1.25rem;
+
+		.nav-menu__list-title {
+			font-weight: 700;
+			font-size: $rem-112;
+			line-height: 100%;
+			color: $white;
+		}
+
+		#{$root}__list {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 2.37rem 6vw;
+
+			@media (max-width: 81.25rem) {
+				gap: 2.37rem 2vw;
+			}
+		}
+
+		#{$root}__links {
+			@include flexCenter(column, flex-start);
+			gap: 1.25rem;
+		}
+
+		#{$root}__link {
+			color: $grey-light;
+			font-weight: 400;
+			font-size: $rem-1;
+			text-transform: unset;
+		}
+	}
+
+	&--xl {
+		grid-row: span 2;
+
+		@media (max-width: 62.5rem) {
+			grid-row: 2 / 4;
+			grid-column: 3 / 4;
+		}
+
+		@media (max-width: 42.5rem) {
+			grid-column: 2 / 3;
+		}
+
+		@media (max-width: 31.25rem) {
+			grid-column: 1;
+			grid-row: 4 / 5;
+		}
+	}
+
+	&--contacts {
+		grid-row: 2/ 3;
+
+		@media (max-width: 31.25rem) {
+			grid-row: 3 / 4;
+		}
+	}
+
+	&--address {
+		@media (max-width: 62.5rem) {
+			grid-row: 2 / 3;
+			grid-column: 1 / 2;
+		}
+
+		@media (max-width: 42.5rem) {
+			grid-row: unset;
+		}
+
+		@media (max-width: 31.25rem) {
+			grid-row: 2 / 3;
 		}
 	}
 }

@@ -18,4 +18,8 @@
 	&__name {
 		transition: transform $transition-300;
 	}
+
+	&--black {
+		justify-content: unset;
+	}
 }
