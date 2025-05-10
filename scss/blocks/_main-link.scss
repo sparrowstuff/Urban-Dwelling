@@ -2,6 +2,7 @@
 	@include flexCenter(row, flex-end);
 	gap: 0.73rem;
 	$root: &;
+	animation: mainLinkFadeIn 2s ease-in forwards;
 
 	@media (max-width: 75rem) {
 		gap: 0.31rem;

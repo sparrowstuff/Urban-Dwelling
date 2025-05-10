@@ -28,6 +28,8 @@
 		background-color: $black;
 		padding: 0.21rem 1.18rem 0.21rem 1.18rem;
 		max-height: 2.43rem;
+		opacity: 0;
+		animation: headerButtonsSlideIn 1s ease-in forwards 1.5s;
 
 		#{$root}__icon-wrapper {
 			position: relative;
@@ -53,6 +55,11 @@
 
 		@media (max-width: 62.5rem) {
 			padding: 0.21rem 0.5rem 0.21rem 0.5rem;
+		}
+
+		@media (max-width: 48rem) {
+			opacity: 1;
+			animation: unset;
 		}
 
 		&:hover,

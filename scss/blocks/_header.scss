@@ -10,6 +10,9 @@
 	&__inner-top-wrapper {
 		width: 100%;
 		background-color: $main;
+		clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
+		opacity: 0;
+		animation: headerTopMenuFadeIn 0.5s ease-in forwards;
 	}
 
 	&__top-menu {
@@ -86,15 +89,10 @@
 	&__bottom-menu {
 		background-color: $white;
 		@include flexCenter(row, center, space-between);
-		// gap: max(15.12rem, 11vw);
 		gap: 2vw;
 		padding: 0.68rem 0 0.68rem 0;
 		width: 100%;
 		position: relative;
-
-		// @media (max-width: 87.5rem) {
-		// 	gap: clamp(7.5rem, 7vw, 15.12rem);
-		// }
 
 		@media (max-width: 75rem) {
 			gap: 4vw;

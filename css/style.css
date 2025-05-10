@@ -448,6 +448,10 @@ button {
 .header__inner-top-wrapper {
   width: 100%;
   background-color: #231815;
+  -webkit-clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
+          clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
+  opacity: 0;
+  animation: headerTopMenuFadeIn 0.5s ease-in forwards;
 }
 .header__top-menu {
   display: flex;
@@ -621,71 +625,6 @@ button {
   gap: 1rem;
 }
 
-.btn {
-  border-radius: 6.25rem;
-  padding: 0.81rem 5.37rem 0.81rem 5.37rem;
-  background-color: #e45302;
-  border: unset;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-weight: 600;
-  font-size: 1rem;
-  line-height: 140%;
-  color: #ffffff;
-  transition: color ease-in 0.3s;
-}
-.btn--transparent {
-  border-radius: unset;
-  background-color: unset;
-  padding: unset;
-  font-weight: 400;
-  line-height: 100%;
-}
-.btn--bucket {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 0.31rem;
-  background-color: #000000;
-  padding: 0.21rem 1.18rem 0.21rem 1.18rem;
-  max-height: 2.43rem;
-}
-.btn--bucket .btn__icon-wrapper {
-  position: relative;
-}
-.btn--bucket .btn__bucket-icon {
-  color: #ffffff;
-  transition: color ease-in 0.3s;
-}
-.btn--bucket .btn__counter {
-  background: #ffffff;
-  border-radius: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: #000000;
-  width: 1.12rem;
-  height: 1.12rem;
-  position: absolute;
-  top: 5%;
-  right: -2%;
-}
-@media (max-width: 62.5rem) {
-  .btn--bucket {
-    padding: 0.21rem 0.5rem 0.21rem 0.5rem;
-  }
-}
-.btn--bucket:hover, .btn--bucket:focus-visible {
-  color: #e45302;
-}
-.btn--bucket:hover .btn__bucket-icon, .btn--bucket:focus-visible .btn__bucket-icon {
-  color: #e45302;
-}
-
 @media (max-width: 48rem) {
   .nav-menu {
     display: none;
@@ -712,6 +651,19 @@ button {
   .nav-menu__list {
     gap: 0.31rem;
   }
+}
+.nav-menu__item {
+  opacity: 0;
+  animation: navLinkSlideIn 0.8s ease-in forwards;
+}
+.nav-menu__item:nth-child(n+1) {
+  animation-delay: 1.3s;
+}
+.nav-menu__item:nth-child(n+2) {
+  animation-delay: 1.8s;
+}
+.nav-menu__item:nth-child(n+3) {
+  animation-delay: 2.3s;
 }
 .nav-menu__link {
   font-weight: 600;
@@ -769,6 +721,10 @@ button {
   align-items: center;
   justify-content: center;
   gap: 0.62rem;
+}
+.nav-menu--burger .nav-menu__item {
+  animation: unset;
+  opacity: 1;
 }
 .nav-menu--footer {
   display: flex;
@@ -851,12 +807,86 @@ button {
   }
 }
 
+.btn {
+  border-radius: 6.25rem;
+  padding: 0.81rem 5.37rem 0.81rem 5.37rem;
+  background-color: #e45302;
+  border: unset;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 140%;
+  color: #ffffff;
+  transition: color ease-in 0.3s;
+}
+.btn--transparent {
+  border-radius: unset;
+  background-color: unset;
+  padding: unset;
+  font-weight: 400;
+  line-height: 100%;
+}
+.btn--bucket {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.31rem;
+  background-color: #000000;
+  padding: 0.21rem 1.18rem 0.21rem 1.18rem;
+  max-height: 2.43rem;
+  opacity: 0;
+  animation: headerButtonsSlideIn 1s ease-in forwards 1.5s;
+}
+.btn--bucket .btn__icon-wrapper {
+  position: relative;
+}
+.btn--bucket .btn__bucket-icon {
+  color: #ffffff;
+  transition: color ease-in 0.3s;
+}
+.btn--bucket .btn__counter {
+  background: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #000000;
+  width: 1.12rem;
+  height: 1.12rem;
+  position: absolute;
+  top: 5%;
+  right: -2%;
+}
+@media (max-width: 62.5rem) {
+  .btn--bucket {
+    padding: 0.21rem 0.5rem 0.21rem 0.5rem;
+  }
+}
+@media (max-width: 48rem) {
+  .btn--bucket {
+    opacity: 1;
+    animation: unset;
+  }
+}
+.btn--bucket:hover, .btn--bucket:focus-visible {
+  color: #e45302;
+}
+.btn--bucket:hover .btn__bucket-icon, .btn--bucket:focus-visible .btn__bucket-icon {
+  color: #e45302;
+}
+
 .main-link {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
   justify-content: center;
   gap: 0.73rem;
+  animation: mainLinkFadeIn 2s ease-in forwards;
 }
 @media (max-width: 75rem) {
   .main-link {
@@ -878,6 +908,8 @@ button {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  opacity: 0;
+  animation: headerButtonsSlideIn 1s ease-in forwards 1.3s;
 }
 .custom-search:hover .custom-search__field, .custom-search:focus-visible .custom-search__field {
   outline: 1px solid #231815;
@@ -938,6 +970,17 @@ button {
 @media (max-width: 100rem) {
   .custom-search__open-search-menu {
     display: block;
+  }
+}
+.custom-search--burger {
+  opacity: 1;
+  animation: unset;
+}
+@media (max-width: 48rem) {
+  .custom-search--burger .custom-search__field {
+    pointer-events: all;
+    opacity: 1;
+    position: static;
   }
 }
 
@@ -1353,4 +1396,48 @@ button {
   align-items: center;
   justify-content: center;
   gap: 2vw;
+}
+
+@keyframes mainLinkFadeIn {
+  0% {
+    opacity: 0;
+    scale: 0.7;
+  }
+  50% {
+    scale: 1.2;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
+@keyframes navLinkSlideIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes headerTopMenuFadeIn {
+  0% {
+    opacity: 0;
+    -webkit-clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
+            clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
+  }
+  100% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    opacity: 1;
+  }
+}
+@keyframes headerButtonsSlideIn {
+  0% {
+    transform: translateX(2rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }/*# sourceMappingURL=style.css.map */

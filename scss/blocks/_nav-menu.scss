@@ -22,6 +22,25 @@
 		}
 	}
 
+	&__item {
+		opacity: 0;
+		animation: navLinkSlideIn 0.8s ease-in forwards;
+	}
+
+	&__item {
+		&:nth-child(n + 1) {
+			animation-delay: 1.3s;
+		}
+
+		&:nth-child(n + 2) {
+			animation-delay: 1.8s;
+		}
+
+		&:nth-child(n + 3) {
+			animation-delay: 2.3s;
+		}
+	}
+
 	&__link {
 		font-weight: 600;
 		line-height: 100%;
@@ -75,6 +94,11 @@
 		#{$root}__list {
 			@include flexCenter(column);
 			gap: 0.62rem;
+		}
+
+		#{$root}__item {
+			animation: unset;
+			opacity: 1;
 		}
 	}
 

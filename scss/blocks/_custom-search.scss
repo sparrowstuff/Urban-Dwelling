@@ -1,6 +1,8 @@
 .custom-search {
 	$root: &;
 	@include flexCenter(row);
+	opacity: 0;
+	animation: headerButtonsSlideIn 1s ease-in forwards 1.3s;
 
 	&:hover,
 	&:focus-visible {
@@ -62,6 +64,19 @@
 
 		@media (max-width: 100rem) {
 			display: block;
+		}
+	}
+
+	&--burger {
+		opacity: 1;
+		animation: unset;
+
+		#{$root}__field {
+			@media (max-width: 48rem) {
+				pointer-events: all;
+				opacity: 1;
+				position: static;
+			}
 		}
 	}
 }
