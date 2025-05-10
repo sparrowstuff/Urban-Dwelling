@@ -1,3 +1,4 @@
+document.addEventListener('load', function () {})
 document.addEventListener('DOMContentLoaded', function () {})
 
 const burgerBtn = document.querySelector('.burger-menu')
